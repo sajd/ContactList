@@ -1,0 +1,50 @@
+﻿<Window x:Class="ExcelContactList.setup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExcelContactList"
+        mc:Ignorable="d"
+        Title="Contact List - Setup" MinHeight="375" Height="375" MinWidth="700" Width="700">
+    <Viewbox>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="2" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <RadioButton x:Name="newRadio" Grid.Row="0" GroupName="File" Style="{StaticResource radioStyle}" IsChecked="true" Checked="New_RadioButton_Checked" >Create new file</RadioButton>
+            <ScrollViewer Grid.Column="1" Grid.Row="0" Style="{StaticResource scrollStyle}">
+                <TextBlock x:Name="newText" Grid.Column="1" Grid.Row="0" Style="{StaticResource setupTextStyle}"></TextBlock>
+            </ScrollViewer>
+            <Button x:Name="newButton" Grid.Column="2" Style="{StaticResource browseStyle}" Click="newButton_Click">New</Button>
+
+            <RadioButton x:Name="openRadio" Grid.Row="1" GroupName="File" Style="{StaticResource radioStyle}" Checked="Open_RadioButton_Checked">Use existing file</RadioButton>
+            <ScrollViewer Grid.Column="1" Grid.Row="1" Style="{StaticResource scrollStyle}">
+                <TextBlock x:Name="openText" Grid.Column="1" Grid.Row="1" Style="{StaticResource setupTextStyle}"></TextBlock>
+            </ScrollViewer>
+            <Button x:Name="openButton" Grid.Column="2" Grid.Row="1" Style="{StaticResource browseStyle}" IsEnabled="false" Click="openButton_Click">Select</Button>
+
+            <Border Grid.ColumnSpan="3" Grid.Row="2" BorderThickness="0,2,0,0" BorderBrush="Gray" />
+
+            <CheckBox x:Name="imgCheckBox" Grid.Row="3" Style="{StaticResource checkStyle}" Checked="imgCheckBox_Checked" Unchecked="imgCheckBox_Unchecked">Set background image(s)</CheckBox>
+            <ScrollViewer Grid.Column="1" Grid.Row="3" Style="{StaticResource scrollStyle}">
+                <TextBlock x:Name="imgText" Grid.Column="1" Grid.Row="3" Style="{StaticResource setupTextStyle}"></TextBlock>
+            </ScrollViewer>
+            <Button x:Name="imgButton" Grid.Column="2" Grid.Row="3" Style="{StaticResource browseStyle}" IsEnabled="False" Click="imgButton_Click">Select</Button>
+
+            <StackPanel Grid.ColumnSpan="3" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Button x:Name="okButton" Style="{StaticResource buttonStyle}" Click="okButton_Click">Ok</Button>
+                <Button x:Name="exitButton" Style="{StaticResource buttonStyle}" Click="exitButton_Click">Exit</Button>
+            </StackPanel>
+        </Grid>
+    </Viewbox>
+</Window>

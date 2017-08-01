@@ -1,0 +1,145 @@
+﻿<Window x:Class="ExcelContactList.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExcelContactList"
+        mc:Ignorable="d"
+        Title="Contact List" Height="720" Width="1280" Closing="Window_Closing">
+    <Border>
+        <Border.Background>
+            <ImageBrush x:Name="bgImage"/>
+        </Border.Background>
+        <Viewbox>
+            <Border Padding="10" Margin="0,100,0,150" BorderThickness="5" BorderBrush="MidnightBlue">
+                <Border.Background>
+                    <SolidColorBrush Color="LightSkyBlue" Opacity="0.75" />
+                </Border.Background>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Grid Style="{StaticResource mainGrid}" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="35" />
+                            <ColumnDefinition Width="110" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Style="{StaticResource mainLabel}">Name:</Label>
+                        <TextBox x:Name="title" Grid.Column="1" Style="{StaticResource mainText}" GotFocus="FieldGotFocus" LostFocus="FieldLostFocus"/>
+                        <TextBox x:Name="fName" Grid.Column="2" Style="{StaticResource mainText}" GotFocus="FieldGotFocus" LostFocus="FieldLostFocus"/>
+                        <TextBox x:Name="lName" Grid.Column="3" Style="{StaticResource mainText}" GotFocus="FieldGotFocus" LostFocus="FieldLostFocus"/>
+                    </Grid>
+                    
+                    <Grid Style="{StaticResource mainGrid}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Style="{StaticResource mainLabel}">Address:</Label>
+                        <TextBox x:Name="addrLine1" Grid.Column="1" Style="{StaticResource mainText}" GotFocus="FieldGotFocus" LostFocus="FieldLostFocus"/>
+                        <TextBox x:Name="addrLine2" Grid.Column="1" Grid.Row="1" Style="{StaticResource mainText}" GotFocus="FieldGotFocus" LostFocus="FieldLostFocus"/>
+                    </Grid>
+                    <Grid Style="{StaticResource mainGrid}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="80"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Style="{StaticResource mainLabel}"></Label>
+                        <TextBox x:Name="city" Grid.Column="1" Style="{StaticResource mainText}" GotFocus="FieldGotFocus" LostFocus="FieldLostFocus"/>
+                        <ComboBox x:Name="state" Grid.Column="2" Style="{StaticResource comboStyle}">
+                            <ComboBoxItem>AA</ComboBoxItem>
+                            <ComboBoxItem>AE</ComboBoxItem>
+                            <ComboBoxItem>AK</ComboBoxItem>
+                            <ComboBoxItem>AL</ComboBoxItem>
+                            <ComboBoxItem>AP</ComboBoxItem>
+                            <ComboBoxItem>AR</ComboBoxItem>
+                            <ComboBoxItem>AS</ComboBoxItem>
+                            <ComboBoxItem>AZ</ComboBoxItem>
+                            <ComboBoxItem x:Name="defaultState">CA</ComboBoxItem>
+                            <ComboBoxItem>CO</ComboBoxItem>
+                            <ComboBoxItem>CT</ComboBoxItem>
+                            <ComboBoxItem>DC</ComboBoxItem>
+                            <ComboBoxItem>DE</ComboBoxItem>
+                            <ComboBoxItem>FL</ComboBoxItem>
+                            <ComboBoxItem>FM</ComboBoxItem>
+                            <ComboBoxItem>GA</ComboBoxItem>
+                            <ComboBoxItem>GU</ComboBoxItem>
+
+                            <ComboBoxItem>HI</ComboBoxItem>
+                            <ComboBoxItem>IA</ComboBoxItem>
+                            <ComboBoxItem>ID</ComboBoxItem>
+                            <ComboBoxItem>IL</ComboBoxItem>
+                            <ComboBoxItem>IN</ComboBoxItem>
+                            <ComboBoxItem>KS</ComboBoxItem>
+                            <ComboBoxItem>KY</ComboBoxItem>
+                            <ComboBoxItem>LA</ComboBoxItem>
+                            <ComboBoxItem>MA</ComboBoxItem>
+                            <ComboBoxItem>MD</ComboBoxItem>
+
+                            <ComboBoxItem>ME</ComboBoxItem>
+                            <ComboBoxItem>MH</ComboBoxItem>
+                            <ComboBoxItem>MI</ComboBoxItem>
+                            <ComboBoxItem>MN</ComboBoxItem>
+                            <ComboBoxItem>MO</ComboBoxItem>
+                            <ComboBoxItem>MP</ComboBoxItem>
+                            <ComboBoxItem>MS</ComboBoxItem>
+                            <ComboBoxItem>MT</ComboBoxItem>
+                            <ComboBoxItem>NC</ComboBoxItem>
+                            <ComboBoxItem>ND</ComboBoxItem>
+                            <ComboBoxItem>NE</ComboBoxItem>
+                            <ComboBoxItem>NH</ComboBoxItem>
+                            
+                            <ComboBoxItem>NJ</ComboBoxItem>
+                            <ComboBoxItem>NM</ComboBoxItem>
+                            <ComboBoxItem>NV</ComboBoxItem>
+                            <ComboBoxItem>NY</ComboBoxItem>
+                            <ComboBoxItem>OH</ComboBoxItem>
+                            <ComboBoxItem>OK</ComboBoxItem>
+                            <ComboBoxItem>OR</ComboBoxItem>
+                            <ComboBoxItem>PA</ComboBoxItem>
+                            <ComboBoxItem>PR</ComboBoxItem>
+                            <ComboBoxItem>PW</ComboBoxItem>
+                            <ComboBoxItem>RI</ComboBoxItem>
+                            <ComboBoxItem>SC</ComboBoxItem>
+                            
+                            <ComboBoxItem>SD</ComboBoxItem>
+                            <ComboBoxItem>TN</ComboBoxItem>
+                            <ComboBoxItem>TX</ComboBoxItem>
+                            <ComboBoxItem>UT</ComboBoxItem>
+                            <ComboBoxItem>VA</ComboBoxItem>
+                            <ComboBoxItem>VI</ComboBoxItem>
+                            <ComboBoxItem>VT</ComboBoxItem>
+                            <ComboBoxItem>WA</ComboBoxItem>
+                            <ComboBoxItem>WI</ComboBoxItem>
+                            <ComboBoxItem>WV</ComboBoxItem>
+                            <ComboBoxItem>WY</ComboBoxItem>
+                        </ComboBox>
+                        <TextBox x:Name="zip" Grid.Column="3" MaxLength="10" Style="{StaticResource mainText}" GotFocus="FieldGotFocus" LostFocus="FieldLostFocus"/>
+                    </Grid>
+                    <Grid Style="{StaticResource mainGrid}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Style="{StaticResource mainLabel}">Email:</Label>
+                        <TextBox x:Name="email" Grid.Column="1" Style="{StaticResource mainText}" GotFocus="FieldGotFocus" LostFocus="FieldLostFocus"/>
+                        <Label Grid.Column="2" Width="58" Margin="10,0,0,0" Style="{StaticResource mainLabel}">Phone:</Label>
+                        <TextBox x:Name="phone" Grid.Column="3" Style="{StaticResource mainText}" GotFocus="FieldGotFocus" LostFocus="FieldLostFocus"/>
+                    </Grid>
+                    <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Center" Height="30" Margin="0,10,0,0" VerticalAlignment="Top" Width="80" Click="Submit_Click"/>
+                </StackPanel>
+            </Border>
+        </Viewbox>
+    </Border>
+</Window>
